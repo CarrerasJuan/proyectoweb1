@@ -1,0 +1,65 @@
+/* se usa wrapper para el contenido principal */
+.wrapper {
+    background-color: rgb(221, 176, 143);
+    /*background-image:  url(../img/2716286c8261bad5786606f0d9f45e2d.jpg);
+    background-position: center;*/
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+/* estilos generales del body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #bd8964;
+}
+
+/* estilos nav para pantallas grandes */
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 60px 30px;
+    border-bottom: 3px solid #ffdd99;
+    background-color: #f5c9a7;
+}
+
+/* posicionamiento del logo en la barra de navegacion */
+.navbar .logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* tamaño del logo en la barra de navegacion */
+.navbar .logo img {
+    height: 90px;
+    width: auto;
+}
+
+/* estilo moderno a la lista de enlaces de navegacion */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+/* estilo moderno a los enlaces de navegacion hacemos referencia (a)*/
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+/* efecto hover para los enlaces de navegacion, cuando pasas el mouse cambia de color el enlace */
+.nav-links a:hover {
+    color: #13923e;
+}
