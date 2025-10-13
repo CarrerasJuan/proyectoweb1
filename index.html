@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integrador-Web1</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrador-Web1</title>
-  <link rel="stylesheet" href="css/estilos.css">
-</head>
-
-<body>
-  <!-- Contenido principal: Trabajamos desde un wrapper para conservar una buena estructura -->
-  <div class="wrapper">
-    <header>
-      <nav class="navbar">
-        <div class="logo"><a href="index.html"><img src="./img/logaso.png" alt="Logo Cafetería" /></a></div>
-        <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="enlaces/articulos.html">Artículos</a></li>
-          <li><a href="enlaces/contactos.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
-</body>
-
+  <body>
+    <!-- Contenido principal: Trabajamos desde un wrapper para conservar una buena estructura -->
+    <div class="wrapper">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="index.html"
+              ><img src="./img/logaso.png" alt="Logo Cafetería"
+            /></a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="enlaces/articulos.html">Artículos</a></li>
+            <li><a href="enlaces/contactos.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- main -->
+      <main>
+        <section class="hero">
+          <h1>Bienvenido a Cafetería IntegradorWeb</h1>
+          <p>Tu lugar favorito para disfrutar del mejor café y pastelería.</p>
+          <a href="enlaces/articulos.html" class="btn">Ver Artículos</a>
+        </section>
+        <section class="features">
+          <div class="feature">
+            <img src="img/blog-2.jpg" alt="Café" />
+            <h2>Café de Calidad</h2>
+            <p>
+              Disfruta de una selección de cafés premium, preparados por
+              baristas expertos.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="img/pasteleria.jpg" alt="Pastelería" />
+            <h2>Deliciosa Pastelería</h2>
+            <p>
+              Nuestra pastelería casera es el complemento perfecto para tu café.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="img/blog-1.jpg" alt="Ambiente" />
+            <h2>Ambiente Acogedor</h2>
+            <p>
+              Un espacio cómodo y relajante para trabajar, estudiar o
+              socializar.
+            </p>
+          </div>
+        </section>
+      </main>
+      <!--  -->
+    </div>
+  </body>
 </html>
