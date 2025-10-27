@@ -1,6 +1,14 @@
-/* --- Reset básico --- */ 
-* { margin: 0; padding: 0; box-sizing: border-box; } 
-    body { font-family: 'Poppins', sans-serif;background-color: #bd8964;}
+/* --- Reset básico --- */
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #bd8964;
+}
 
 /* se usa wrapper para el contenido principal */
 .wrapper {
@@ -66,4 +74,166 @@ body {
 /* efecto hover para los enlaces de navegacion, cuando pasas el mouse cambia de color el enlace */
 .nav-links a:hover {
     color: #13923e;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #000;
+    z-index: 1000;
+    /* se asegura de que quede arriba */
+    position: relative;
+}
+
+main {
+    position: relative;
+    /* necesario para que main::before esté contenido */
+    padding: 20px 20px;
+    text-align: center;
+    background-color: transparent;
+    /* <-- importante: deja ver el pattern */
+    color: #fffaf3;
+
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+    /* queda detrás de main * */
+    pointer-events: none;
+}
+
+main * {
+    position: relative;
+    z-index: 1;
+}
+
+header,
+main,
+.carousel-section,
+footer {
+    background-color: transparent;
+}
+
+header,
+main,
+footer,
+.carousel-caption {
+    color: #bd8964;
+    background-color: rgba(44, 43, 43, 0.8);
+}
+
+
+main {
+    font-family: 'Montserrat', sans-serif;
+    color: #3e2723;
+    line-height: 1.6;
+}
+
+/* Estilos de la sección hero */
+.hero {
+    text-align: center;
+    padding: 8px 2px;
+    background-color: #f5c9a7;
+}
+
+/* Títulos y párrafos dentro de la sección hero */
+.hero h1 {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Párrafos dentro de la sección hero */
+.hero p {
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* Estilo del botón dentro de la sección hero */
+.hero .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #000000;
+    color: #f5c9a7;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover para el botón dentro de la sección hero */
+.hero .btn:hover {
+    background-color: #13923e;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+/* @media (max-width: 768px) {
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}*/
+/* Estilos de la sección de características */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Estilos individuales para cada característica */
+.feature img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+/* Estilos individuales para cada característica */
+.feature {
+    flex: 1 1 300px;
+    background-color: #f5c9a7;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover para cada característica */
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+/* Títulos dentro de cada característica */
+.feature h2 {
+    font-size: 1.8rem;
+    color: #000000;
+    margin: 15px 0;
+}
+
+/* Párrafos dentro de cada característica */
+.feature p {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.5;
 }
