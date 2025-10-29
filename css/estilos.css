@@ -1,18 +1,6 @@
-/* --- Reset básico --- */
-* {
-    margin: 0;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #bd8964;
-}
-
 /* se usa wrapper para el contenido principal */
 .wrapper {
-    background-color: rgb(221, 176, 143);
+    background-color: #bd8964;
     /*background-image:  url(../img/2716286c8261bad5786606f0d9f45e2d.jpg);
     background-position: center;*/
     background-size: cover;
@@ -23,45 +11,42 @@ body {
     overflow: auto;
 }
 
+
 /* estilos generales del body */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #bd8964;
+    background-color: rgb(221, 176, 143);
 }
 
 /* estilos nav para pantallas grandes */
 .navbar {
-    position: relative;
     display: flex;
-    justify-content: flex-end;
+    /* Activa flexbox */
+    justify-content: space-between;
+    /* Logo a la izquierda, enlaces a la derecha */
     align-items: center;
-    padding: 60px 30px;
-    border-bottom: 3px solid #ffdd99;
+    /* Centra verticalmente */
+    padding: 20px 40px;
     background-color: #f5c9a7;
+    border-bottom: 3px solid #ffdd99;
 }
 
-/* posicionamiento del logo en la barra de navegacion */
-.navbar .logo {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* tamaño del logo en la barra de navegacion */
+/* El logo ya no necesita posición absoluta */
 .navbar .logo img {
-    height: 90px;
+    height: 80px;
     width: auto;
 }
 
-/* estilo moderno a la lista de enlaces de navegacion */
+/* Lista horizontal con espacio entre enlaces */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    /* Alinea horizontalmente */
+    gap: 30px;
+    /* Espacio entre enlaces */
 }
 
-/* estilo moderno a los enlaces de navegacion hacemos referencia (a)*/
+/* Estilos para los enlaces de navegación */
 .nav-links a {
     text-decoration: none;
     color: #000;
@@ -71,11 +56,12 @@ body {
     transition: color 0.3s ease;
 }
 
-/* efecto hover para los enlaces de navegacion, cuando pasas el mouse cambia de color el enlace */
+/* Efecto hover para los enlaces de navegación */
 .nav-links a:hover {
     color: #13923e;
 }
 
+/* Estilos para el botón del menú en pantallas pequeñas no la necesitamos momentaneamente */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -88,17 +74,7 @@ body {
     position: relative;
 }
 
-main {
-    position: relative;
-    /* necesario para que main::before esté contenido */
-    padding: 20px 20px;
-    text-align: center;
-    background-color: transparent;
-    /* <-- importante: deja ver el pattern */
-    color: #fffaf3;
-
-}
-
+/* Estilos para el main con overlay */
 main::before {
     content: "";
     position: absolute;
@@ -109,18 +85,13 @@ main::before {
     pointer-events: none;
 }
 
+/* Asegura que el contenido de main esté por encima del overlay */
 main * {
     position: relative;
     z-index: 1;
 }
 
-header,
-main,
-.carousel-section,
-footer {
-    background-color: transparent;
-}
-
+/* Estilos generales para header, main, footer y captions del carrusel */
 header,
 main,
 footer,
@@ -129,7 +100,7 @@ footer,
     background-color: rgba(44, 43, 43, 0.8);
 }
 
-
+/* Estilos específicos para el main */
 main {
     font-family: 'Montserrat', sans-serif;
     color: #3e2723;
@@ -174,22 +145,9 @@ main {
     background-color: #13923e;
 }
 
-/* Estilos responsivos para pantallas pequeñas */
-/* @media (max-width: 768px) {
-    .hero {
-        padding: 40px 15px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-}*/
 /* Estilos de la sección de características */
 .features {
+    /* Estilos generales uso de flexbox */
     display: flex;
     justify-content: space-around;
     padding: 60px 20px;
@@ -236,4 +194,259 @@ main {
     font-size: 1rem;
     color: #000000;
     line-height: 1.5;
+}
+
+/* Estilos para el main con overlay */
+main {
+    position: relative;
+    /* necesario para que main::before esté contenido */
+    padding: 40px 20px;
+    text-align: center;
+    background-color: transparent;
+    /* <-- importante: deja ver el pattern */
+    color: #fffaf3;
+}
+
+/* Overlay oscuro */
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+    /* queda detrás de main * */
+    pointer-events: none;
+}
+
+/* Asegura que el contenido de main esté por encima del overlay */
+main * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilos del carrusel */
+.carousel-section {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #bd8964;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    z-index: 1;
+}
+
+/* Overlay opcional para oscurecer las imágenes */
+.carousel-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+    /* opcional */
+    z-index: 1;
+}
+
+/* Asegura que las imágenes y captions estén por encima del overlay */
+.carousel-item,
+.carousel-caption {
+    z-index: 2;
+    position: absolute;
+    /* caption ya lo tenía */
+}
+
+/* Estilos de las imágenes del carrusel */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Posicionamiento y estilos de los items del carrusel */
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Muestra el item activo */
+.carousel-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Estilos de las imágenes del carrusel */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Estilos del caption del carrusel */
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 60%;
+}
+
+/* Botones de control */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-30%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 3;
+    transition: background 0.3s;
+}
+
+/* Efecto hover para los botones */
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Posicionamiento específico para cada botón prev */
+.carousel-btn.prev {
+    left: 15px;
+}
+
+/* Posicionamiento específico para cada botón next */
+.carousel-btn.next {
+    right: 15px;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: transparent;
+    color: #000;
+    display: flex;
+    /* Activamos flex */
+    flex-direction: column;
+    /* Elementos uno debajo del otro */
+    align-items: center;
+    /* Centramos todo */
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-media {
+    display: flex;
+    /* iconos en fila */
+    gap: 15px;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-media a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+/* Efecto hover para los iconos de redes sociales */
+.social-media a:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilos para los artículos(pagina)/productos */
+/* Seccion Articulos */
+/* Se usa .productos para la seccion de productos */
+.productos {
+    padding: 60px 20px;
+    background-color: #f5c9a7;
+}
+
+/* Título de la sección de productos */
+.productos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 4rem;
+    color: #000000;
+}
+
+/* Grid de productos */
+.grid-productos {
+    display: flex;
+    /* Usamos flexbox */
+    flex-wrap: wrap;
+    /* Permite que los productos bajen de línea */
+    justify-content: center;
+    /* Centra horizontalmente los productos */
+    gap: 30px;
+    /* Espacio entre productos */
+    padding: 20px;
+}
+
+/* Estilos individuales para cada producto */
+.producto {
+    flex: 1 1 290px;
+    /* Cada producto ocupa mínimo 290px */
+    max-width: 350px;
+    /* Máximo ancho */
+    background-color: #e48f80;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen del producto */
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Título del producto */
+.producto h3 {
+    margin: 15px 0;
+    color: #000000;
+}
+
+/* Categoría del producto */
+.producto .categoria {
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+/* Precio del producto */
+.producto .precio {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 10px 0;
+}
+
+/* Botón de agregar al carrito */
+.producto .btn-agregar {
+    background-color: #000000;
+    color: #f5c9a7;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover para el botón de agregar al carrito */
+.producto .btn-agregar:hover {
+    background-color: #13923e;
 }
