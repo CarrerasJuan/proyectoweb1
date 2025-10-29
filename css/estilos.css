@@ -1,3 +1,10 @@
+/* --- Reset básico --- */
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 /* se usa wrapper para el contenido principal */
 .wrapper {
     background-color: #bd8964;
