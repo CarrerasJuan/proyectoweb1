@@ -1,23 +1,30 @@
+/*
+  Validaciones del formulario de contacto
+*/
 document.addEventListener("DOMContentLoaded", () => {
+  /* Manejo del formulario */
   const form = document.getElementById("contactoForm");
+  /* Lugar para mostrar el resultado */
   const resultado = document.querySelector(".resultado-envio");
-
+  /* Escuchar el evento submit del formulario */
   form.addEventListener("submit", (e) => {
+    /* Prevenir el envio por defecto */
     e.preventDefault();
+    /* Limpiar mensajes previos */
     limpiarMensajes();
-
+    /* Obtener valores de los campos */
     const nombre = form.nombre.value.trim();
     const genero = form.genero.value;
     const email = form.email.value.trim();
     const telefono = form.telefono.value.trim();
     const nacimiento = form.nacimiento.value;
     const mensaje = form.mensaje.value.trim();
-
+    /* Variable para rastrear si el formulario es valido */
     let valido = true;
 
     // Validar nombre
     const nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s'’]+$/;
-
+    /* El nombre debe tener entre 10 y 50 caracteres y solo letras y espacios */
     if (nombre.length < 10 || nombre.length > 50) {
       mostrarError(
         "help-nombre",
@@ -74,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mostrarError("help-nacimiento", "La fecha excede el limite de 120 años.");
       valido = false;
     }
-
+    /* Validar mensaje */
     if (valido) {
       mostrarResultado({
         nombre,
@@ -87,20 +94,20 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
     }
   });
-
+  /* Funciones auxiliares */
   function mostrarError(id, mensaje) {
     document.getElementById(id).textContent = mensaje;
   }
-
+  /* Limpiar mensajes de error y resultado */
   function limpiarMensajes() {
     document.querySelectorAll(".help").forEach((el) => (el.textContent = ""));
     resultado.textContent = "";
   }
-
+  /* Mostrar resultado exitoso */
   function mostrarResultado(datos) {
     resultado.textContent = "Datos enviados correctamente:";
     const lista = document.createElement("ul");
-
+    /* Recorrer los datos y agregarlos a la lista */
     for (let key in datos) {
       const li = document.createElement("li");
       li.textContent = `${key}: ${datos[key] || "—"}`;
