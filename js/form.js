@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
       valido = false;
     }
 
-    // Validar telefono (opcional quierer decir que se puede enviar lo mismo sin el, pero si hay valor, debe coincidir con formato)
+    // Validar telefono (opcional quiere decir que se puede enviar lo mismo sin el, pero si hay valor, debe coincidir con formato)
     const telRegex = /^\+?\d{1,4}[\s-]?\d{2,4}[\s-]?\d{3,4}[\s-]?\d{3,4}$/;
-    if (telefono && !telRegex.test(telefono)) {
+    if (telefono && !telRegex.test(telefono) || telefono.length < 8 || telefono.length > 15) {
       mostrarError(
         "help-telefono",
         "Formato no valido. Ej: +54 9 11 1234-5678"
