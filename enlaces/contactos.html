@@ -26,8 +26,78 @@
       </ul>
     </nav>
   </header>
-  <!-- aca va el contenido principal de la página -->
+
+<!-- formulario -->
+  <main class="wrapper">
+    <section class="contacto">
+      <div class="container">
+        <h1>Complete sus datos</h1>
+
+        <form class="card" id="contactoForm" novalidate>
+          <fieldset>
+            <legend>Mis datos:</legend>
+
+            <!-- Nombre -->
+            <label for="nombre">Nombre y Apellido:</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Ej: Juan Pérez" required minlength="10"
+              maxlength="50" />
+            <div class="help" id="help-nombre"></div>
+
+            <!-- Género -->
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+              <option value="otro">Otro</option>
+            </select>
+            <div class="help" id="help-genero"></div>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+            <div class="help" id="help-email"></div>
+
+            <!-- Teléfono -->
+            <label for="telefono">Teléfono (opcional):</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="+54 9 11 1234-5678" />
+            <div class="help" id="help-telefono"></div>
+
+            <!-- Fecha -->
+            <label for="nacimiento">Fecha de Nacimiento:</label>
+            <input id="nacimiento" name="nacimiento" type="date" required min="1900-09-24" max="2025-09-24" />
+            <div class="help" id="help-nacimiento"></div>
+
+            <!-- Mensaje -->
+            <label for="mensaje">Mensaje (opcional):</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje aquí..."></textarea>
+            <div class="help" id="help-mensaje"></div>
+
+            <div class="actions">
+              <button type="submit">Enviar</button>
+              <button type="reset">Reset</button>
+            </div>
+            <!-- Resultado de envio -->
+            <div class="resultado-envio"></div>
+          </fieldset>
+        </form>
+    </section>
+  </main>
+  <!-- footer -->
+  <footer>
+    <p>
+      &copy; 2025 Cafetería IntegradorWeb-CarrerasJuan & Heber Gomez. Todos
+      los derechos reservados.
+    </p>
+    <div class="social-media">
+      <a href=""><img src="../img/icons8-fb-50.png" alt="Facebook" /></a>
+      <a href="#"><img src="../img/icons8-twitter-50.png" alt="Twitter" /></a>
+      <a href="#"><img src="../img/icons8-instagram-50.png" alt="Instagram" /></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/form.js"></script>
 
 </body>
-
 </html>
