@@ -36,6 +36,8 @@ body {
     padding: 20px 40px;
     background-color: #f5c9a7;
     border-bottom: 3px solid #ffdd99;
+    position: relative; /* probando */
+    z-index: 10;
 }
 
 /* El logo ya no necesita posición absoluta */
@@ -68,17 +70,73 @@ body {
     color: #13923e;
 }
 
-/* Estilos para el botón del menú en pantallas pequeñas no la necesitamos momentaneamente */
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #000;
-    z-index: 1000;
-    /* se asegura de que quede arriba */
-    position: relative;
+/* BTON hamburguesa oculto en desktop */
+.menu-hambur {
+  display: none;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Media para navbar responsive */
+@media (max-width: 600px) {
+
+      .menu-hambur {
+    display: block; 
+  }
+
+
+  .nav-links {
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    gap: 12px;
+    background: #f5c9a7;
+    width: 100%;
+    position: absolute;
+    top: 100px; /* debajo del nav */
+    left: 0;
+    padding: 15px 0;
+    border-top: 3px solid #ffdd99;
+    z-index: 999;
+  }
+    /* Cuando se activa */
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar .logo img {
+    height: 60px;
+  }
+}
+
+/* MENU HAMBURGUESA PARA MOBILE */
+@media (max-width: 600px) {
+
+  .menu-hambur {
+    display: block; /* ahora sí aparece */
+  }
+
+  nav ul {
+    display: none; /* el menú se oculta por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* ajusta según altura del nav */
+    right: 0;
+    width: 100%;
+    background: #fff; /* fondo del menú desplegado */
+    padding: 10px 0;
+  }
+
+  nav ul.show {
+    display: flex; /* se muestra cuando se active */
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 10px 0;
+  }
 }
 
 /* Estilos para el main con overlay */
@@ -114,28 +172,32 @@ main {
     line-height: 1.6;
 }
 
+
+
 /* Estilos de la sección hero */
 .hero {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
-    padding: 8px 2px;
+    padding: 60px 20px; 
     background-color: #f5c9a7;
 }
 
-/* Títulos y párrafos dentro de la sección hero */
+/* Titulo y parrafos de seccion hero ajustados se rompia en responsive */
 .hero h1 {
     font-size: 3rem;
     color: #000000;
     margin-bottom: 20px;
 }
 
-/* Párrafos dentro de la sección hero */
 .hero p {
     font-size: 1.2rem;
     color: #000000;
     margin-bottom: 30px;
 }
 
-/* Estilo del botón dentro de la sección hero */
 .hero .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -147,9 +209,29 @@ main {
     transition: background-color 0.3s ease;
 }
 
-/* Efecto hover para el botón dentro de la sección hero */
 .hero .btn:hover {
     background-color: #13923e;
+}
+
+/* Media para mobile*/
+@media (max-width: 600px) {
+  .hero {
+      padding: 40px 15px;
+  }
+
+  .hero h1 {
+      font-size: 2.2rem;
+  }
+
+  .hero p {
+      font-size: 1rem;    
+      margin-bottom: 20px;
+  }
+
+  .hero .btn {
+      padding: 10px 24px; 
+      font-size: 0.95rem;
+  }
 }
 
 /* Estilos de la sección de características */
@@ -543,4 +625,46 @@ button:hover {
     margin-top: 15px;
     color: green;
     font-weight: 600;
+}
+
+/* prueba de formulario */
+@media (max-width: 600px) {
+
+  /* Solo afecta la página contacto */
+  .contacto .container {
+      width: 100%;
+      padding: 0 10px;
+  }
+
+  .contacto .card {
+      width: 100%;
+      padding: 20px;
+      border-radius: 12px;
+  }
+
+  .contacto h1 {
+      text-align: center;
+      font-size: 1.8rem;
+  }
+
+  .contacto label {
+      font-size: 0.95rem;
+  }
+
+  .contacto input,
+  .contacto select,
+  .contacto textarea {
+      width: 100%;
+      font-size: 0.95rem;
+      padding: 8px;
+  }
+
+  .contacto .actions {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .contacto button {
+      width: 100%;
+  }
 }
